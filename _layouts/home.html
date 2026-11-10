@@ -47,14 +47,9 @@ layout: default
 {% endif %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  {% if posts.size == 0 %}
-    <div class="card-wrapper card">
-      <div class="card-body">
-        <h1 class="card-title my-2 mt-md-0">Welcome</h1>
-        <p class="card-text content mt-0 mb-3">This is my academic blog. Notes and updates will appear here.</p>
-        <p><a href="{{ '/publications/' | relative_url }}">Publications</a> · <a href="{{ '/projects/' | relative_url }}">Research projects</a></p>
-      </div>
-    </div>
+  {% include academic-home.html %}
+  {% if posts.size > 0 %}
+    <h2 class="academic-section-title">Latest notes</h2>
   {% endif %}
   {% for post in posts %}
     <article class="card-wrapper card">
